@@ -29,6 +29,17 @@
         </label>
 
         <input type="text" id="movie_id_box" name="query_movie_id">
+
+        
+
+
+        <select name="query_movie_id>
+        <%Movie.all.order(:title).each do |a_movie| %>
+          <option value="<%= a_movie.id %>">
+          <%= a_movie.title %>
+          </option>
+        <% end %>
+        </select>
       </div>
 
       <button>
@@ -74,11 +85,11 @@
         </td>
 
         <td>
-          <%= a_bookmark.user_id %>
+          <%= a_bookmark.user.first_name %>
         </td>
 
         <td>
-          <%= a_bookmark.movie_id %>
+          <%= a_bookmark.movie.title %>
         </td>
 
         <td>

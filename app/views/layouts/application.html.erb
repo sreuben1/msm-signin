@@ -30,7 +30,7 @@
       </li>
       
 
-      <% if session.fetch(:user_id) == nil %>
+      <% if @current_user == nil %>
       <li>
         <a href="/user_sign_up">Sign up</a>
       </li>
@@ -39,7 +39,7 @@
       </li>
       <% else %>
       <li>
-        <a href="/bookmarks">My Bookmarks</a>
+        <a href="/bookmarks"><%= @current_user.first_name %>'s bookmarks</a>
       </li>
       <li>
         <a href="/user_sign_out">Sign out</a>

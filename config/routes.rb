@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   post("/insert_character", { :controller => "characters", :action => "create" })
           
   # READ
-  get("/characters", { :controller => "characters", :action => "index" })
+  get("/charcters", { :controller => "characters", :action => "index" })
   
   get("/characters/:path_id", { :controller => "characters", :action => "show" })
   
