@@ -32,7 +32,7 @@
       </div>
 
       <button>
-        Create bookmark
+        Bookmark this movie!
       </button>
     </form>
   </div>
@@ -56,13 +56,7 @@
 
       <% @list_of_bookmarks.each do |a_bookmark| %>
       <tr>
-        <td>
-          <%= a_bookmark.id %>
-        </td>
 
-        <td>
-          <%= a_bookmark.user.first_name %>
-        </td>
 
         <td>
           <%= a_bookmark.movie.title %>
@@ -71,19 +65,11 @@
         <td>
           <%= time_ago_in_words(a_bookmark.created_at) %> ago
         </td>
-        <td>
-          <%= time_ago_in_words(a_bookmark.updated_at) %> ago
-        </td>
 
-        <td>
-          <a href="/bookmarks/<%= a_bookmark.id %>">
-            Show details
-          </a>
-        </td>
 
         <td>
         <a href="/delete_bookmark/<%= a_bookmark.id %>">
-          Delete bookmark
+          Un-bookmark
         </a>
       </td>
       </tr>
